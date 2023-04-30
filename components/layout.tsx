@@ -34,7 +34,7 @@ function Layout({
         <meta property="og:title" content={siteTitle} />
         <meta
           property="og:url"
-          content="https://nextjs-blog-murphyslaw.vercel.app"
+          content={process.env.NEXT_PUBLIC_SITE_URL}
           key="og:url"
         />
         <meta property="og:type" content="website" key="og:type" />
@@ -45,13 +45,25 @@ function Layout({
         />
         <meta
           property="og:image"
-          content="/images/falk-koeppe-logo.svg"
+          content={`${process.env.NEXT_PUBLIC_SITE_URL}/images/falk-koeppe-logo.svg`}
+          key="og:image"
+        />
+        <meta
+          property="og:image:secure_url"
+          content={`${process.env.NEXT_PUBLIC_SITE_URL}/images/falk-koeppe-logo.svg`}
           key="og:image"
         />
         <meta
           property="og:image:type"
           content="image/svg+xml"
           key="og:image:type"
+        />
+        <meta property="og:image:width" content="200" key="og:image:width" />
+        <meta property="og:image:height" content="200" key="og:image:height" />
+        <meta
+          property="og:image:alt"
+          content="Nature Logo Falk Köppe"
+          key="og:image:alt"
         />
 
         <meta name="og:title" content={siteTitle} key="og:title" />

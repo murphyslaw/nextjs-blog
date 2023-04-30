@@ -1,22 +1,20 @@
 import { GetServerSideProps } from "next";
 import { getSortedPostsData } from "../lib/posts";
 
-const PUBLIC_DOMAIN = "https://nextjs-blog-murphyslaw.vercel.app";
-
 function generateSiteMap(posts) {
   return `<?xml version="1.0" encoding="UTF-8"?>
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
      <url>
-       <loc>https://nextjs-blog-murphyslaw.vercel.app</loc>
+       <loc>${process.env.NEXT_PUBLIC_SITE_URL}</loc>
      </url>
      <url>
-       <loc>https://nextjs-blog-murphyslaw.vercel.app/api/hello</loc>
+       <loc>${process.env.NEXT_PUBLIC_SITE_URL}/api/hello</loc>
      </url>
      ${posts
        .map(({ id }) => {
          return `
        <url>
-           <loc>${`${PUBLIC_DOMAIN}/posts/${id}`}</loc>
+           <loc>${`${process.env.NEXT_PUBLIC_SITE_URL}/posts/${id}`}</loc>
        </url>
      `;
        })

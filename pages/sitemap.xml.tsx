@@ -1,3 +1,4 @@
+import { GetServerSideProps } from "next";
 import { getSortedPostsData } from "../lib/posts";
 
 const PUBLIC_DOMAIN = "https://nextjs-blog-murphyslaw.vercel.app";
@@ -28,7 +29,7 @@ function SiteMap() {
   // getServerSideProps will do the heavy lifting
 }
 
-async function getServerSideProps({ res }) {
+const getServerSideProps: GetServerSideProps = async ({ res }) => {
   const posts = getSortedPostsData();
   const sitemap = generateSiteMap(posts);
 
@@ -39,6 +40,6 @@ async function getServerSideProps({ res }) {
   return {
     props: {},
   };
-}
+};
 
 export { SiteMap as default, getServerSideProps };

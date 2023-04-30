@@ -7,7 +7,13 @@ import styles from "./layout.module.css";
 const name = "Falk Köppe";
 const siteTitle = "Falk Köppe";
 
-function Layout({ home, children }) {
+function Layout({
+  home,
+  children,
+}: {
+  children: React.ReactNode;
+  home?: boolean;
+}) {
   return (
     <div className={styles.container}>
       <Head>

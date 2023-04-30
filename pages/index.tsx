@@ -1,3 +1,4 @@
+import { GetStaticProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { clsx } from "clsx";
@@ -6,11 +7,22 @@ import Layout from "../components/layout";
 import Date from "../components/date";
 import utilStyles from "../styles/utils.module.css";
 
-function Home({ allPostsData }) {
+function Home({
+  allPostsData,
+}: {
+  allPostsData: {
+    date: string;
+    title: string;
+    id: string;
+  }[];
+}) {
+  const siteTitle = "Falk Köppe";
+
   return (
     <Layout home>
       <Head>
-        <title>Falk Köppe</title>
+        <title>{siteTitle}</title>
+
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -49,7 +61,7 @@ function Home({ allPostsData }) {
   );
 }
 
-async function getStaticProps() {
+const getStaticProps: GetStaticProps = () => {
   const allPostsData = getSortedPostsData();
 
   return {
@@ -57,6 +69,6 @@ async function getStaticProps() {
       allPostsData,
     },
   };
-}
+};
 
 export { Home as default, getStaticProps };

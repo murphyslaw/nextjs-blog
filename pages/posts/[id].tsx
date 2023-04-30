@@ -1,14 +1,25 @@
+import { GetStaticProps, GetStaticPaths } from "next";
 import Head from "next/head";
 import { getAllPostIds, getPostData } from "../../lib/posts";
 import Date from "../../components/date";
 import Layout from "../../components/layout";
 import utilStyles from "../../styles/utils.module.css";
 
-function Post({ postData }) {
+function Post({
+  postData,
+}: {
+  postData: {
+    title: string;
+    date: string;
+    contentHtml: string;
+  };
+}) {
+  const siteTitle = `${postData.title} | Falk Köppe`;
+
   return (
     <Layout>
       <Head>
-        <title>{postData.title} | Falk Köppe</title>
+        <title>{siteTitle}</title>
       </Head>
 
       <article>
@@ -24,23 +35,23 @@ function Post({ postData }) {
   );
 }
 
-async function getStaticPaths() {
+const getStaticPaths: GetStaticPaths = async () => {
   const paths = getAllPostIds();
 
   return {
     paths,
     fallback: false,
   };
-}
+};
 
-async function getStaticProps({ params }) {
-  const postData = await getPostData(params.id);
+const getStaticProps: GetStaticProps = async ({ params }) => {
+  const postData = await getPostData(params?.id as string);
 
   return {
     props: {
       postData,
     },
   };
-}
+};
 
 export { Post as default, getStaticPaths, getStaticProps };

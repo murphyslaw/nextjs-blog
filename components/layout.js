@@ -5,9 +5,9 @@ import utilStyles from "../styles/utils.module.css";
 import styles from "./layout.module.css";
 
 const name = "Falk Köppe";
-const siteTitle = "Next.js Simple Website";
+const siteTitle = "Falk Köppe";
 
-function Layout({ children, home }) {
+function Layout({ home, children }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -17,15 +17,43 @@ function Layout({ children, home }) {
           content="Learn how to build a personal website using Next.js"
         />
 
+        <meta name="robots" content="all" key="robots" />
         <meta
-          property="og:image"
-          content={`https://og-image.vercel.app/${encodeURI(
-            siteTitle
-          )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fupload%2Ffront%2Fdesign%2Fnextjs-black-logo.svg`}
+          name="description"
+          content="Falk Köppe is a software engineer and technical project manager with expertise in full stack development, productivity, and education."
+          key="description"
         />
 
-        <meta name="og:title" content={siteTitle} />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="og:site_name" content={siteTitle} />
+        <meta property="og:title" content={siteTitle} />
+        <meta
+          property="og:url"
+          content="https://nextjs-blog-murphyslaw.vercel.app"
+          key="og:url"
+        />
+        <meta property="og:type" content="website" key="og:type" />
+        <meta
+          property="og:description"
+          content="Falk Köppe is a software engineer and technical project manager with expertise in full stack development, productivity, and education."
+          key="og:description"
+        />
+        <meta
+          property="og:image"
+          content="/images/falk-koeppe-logo.svg"
+          key="og:image"
+        />
+        <meta
+          property="og:image:type"
+          content="image/svg+xml"
+          key="og:image:type"
+        />
+
+        <meta name="og:title" content={siteTitle} key="og:title" />
+        <meta
+          name="twitter:card"
+          content="summary_large_image"
+          key="twitter:card"
+        />
       </Head>
 
       <header className={styles.header}>
@@ -33,7 +61,7 @@ function Layout({ children, home }) {
           <>
             <Image
               priority
-              src="/images/profile.png"
+              src="/images/falk-koeppe-profile.png"
               className={utilStyles.borderCircle}
               height={144}
               width={144}
@@ -46,7 +74,7 @@ function Layout({ children, home }) {
             <Link href="/">
               <Image
                 priority
-                src="/images/profile.png"
+                src="/images/falk-koeppe-profile.png"
                 className={utilStyles.borderCircle}
                 height={108}
                 width={108}

@@ -10,20 +10,21 @@ function Home({ allPostsData }) {
   return (
     <Layout home>
       <Head>
-        <title>Create Next App</title>
+        <title>Falk Köppe</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <section className={utilStyles.headingMd}>
         <p>
           Hello, I'm <strong>Falk</strong>. I'm a software engineer and
-          technical project manager. You can contact me on{" "}
+          technical project manager with expertise in full stack development,
+          productivity, and education. You can contact me on{" "}
           <a href="https://www.linkedin.com/in/falk-koeppe/">LinkedIn</a>.
         </p>
 
         <p>
-          (This is a sample webiste - you'll be building a site like this on{" "}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
+          (This is a sample website - you'll be building a site like this in{" "}
+          <a href="https://nextjs.org/learn">the Next.js tutorial</a>.)
         </p>
       </section>
 
@@ -50,8 +51,6 @@ function Home({ allPostsData }) {
 
 async function getStaticProps() {
   const allPostsData = getSortedPostsData();
-
-  console.log(allPostsData);
 
   return {
     props: {

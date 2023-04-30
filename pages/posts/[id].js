@@ -8,7 +8,7 @@ function Post({ postData }) {
   return (
     <Layout>
       <Head>
-        <title>{postData.title}</title>
+        <title>{postData.title} | Falk Köppe</title>
       </Head>
 
       <article>
@@ -26,8 +26,6 @@ function Post({ postData }) {
 
 async function getStaticPaths() {
   const paths = getAllPostIds();
-
-  console.log(paths);
 
   return {
     paths,

@@ -28,15 +28,15 @@ function Home({
 
       <section className={utilStyles.headingMd}>
         <p>
-          Hello, I'm <strong>Falk</strong>. I'm a software engineer and
-          technical project manager with expertise in full stack development,
-          productivity, and education. You can contact me on{" "}
+          Hello, I&apos;m <strong>Falk</strong>. I&apos;m a software engineer
+          and technical project manager with expertise in full stack
+          development, productivity, and education. You can contact me on{" "}
           <a href="https://www.linkedin.com/in/falk-koeppe/">LinkedIn</a>.
         </p>
 
         <p>
-          (This is a sample website - you'll be building a site like this in{" "}
-          <a href="https://nextjs.org/learn">the Next.js tutorial</a>.)
+          (This is a sample website - you&apos;ll be building a site like this
+          in <a href="https://nextjs.org/learn">the Next.js tutorial</a>.)
         </p>
       </section>
 
